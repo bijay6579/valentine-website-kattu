@@ -67,7 +67,12 @@ cursor:pointer;
 }
 
 #yes{background:#ff4b6e;color:white;}
-#no{background:#ddd;position:absolute;}
+#no{
+  background:#ddd;
+  position:relative;
+  padding:10px 18px; /* slightly smaller */
+  font-size:14px;   /* not too small */
+}
 
 .love{
 display:none;
@@ -115,7 +120,9 @@ const questions = [
   "Please be my Valentine, Kritika 💖",
   "Kritika, I promise I'll make you smile every day 😘",
   "Life is sweeter with you, Kritika — be mine? 🌹",
-  "Last chance Kritika… will you be my Valentine? 💞"
+  "My heart already chose you, Kritika ❤️",
+  "I can’t imagine Valentine’s without you, Kritika 💞",
+  "Last chance Kritika… will you be my Valentine? ✨"
 ];
 let i=0;
 
@@ -126,14 +133,12 @@ const love=document.getElementById("loveMsg");
 const card=document.getElementById("card");
 const photo=document.getElementById("mainPhoto");
 
-noBtn.onclick=next;
-noBtn.ontouchstart=next;
+noBtn.onclick = next;
+noBtn.ontouchstart = next;
 
 function next(){
-i=(i+1)%questions.length;
-q.textContent=questions[i];
-noBtn.style.left=Math.random()*(window.innerWidth-100)+"px";
-noBtn.style.top=Math.random()*(window.innerHeight-100)+"px";
+  i = (i + 1) % questions.length;
+  q.textContent = questions[i];
 }
 
 yesBtn.onclick=()=>{
